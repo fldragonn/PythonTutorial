@@ -1,13 +1,16 @@
+# -*- coding: utf-8 -*-
+
 import telegram
 import requests
 from bs4 import BeautifulSoup
 from apscheduler.schedulers.blocking import BlockingScheduler
 
-my_token = '821727099:AAHNy3XYROWgjNnL2N3AnZ72Dyp6OXls1Pw'   #토큰을 변수에 저장합니다.
-bot = telegram.Bot(token = my_token)   #bot을 선언합니다.
+# 토큰 저장 및 봇 선언
+my_token = '821727099:AAHNy3XYROWgjNnL2N3AnZ72Dyp6OXls1Pw'
+bot = telegram.Bot(token = my_token)
 
 # cgv 시간표 URL
-url = 'http://www.cgv.co.kr/common/showtimes/iframeTheater.aspx?areacode=02&theatercode=0181&date=20191105'
+url = 'http://www.cgv.co.kr/common/showtimes/iframeTheater.aspx?areacode=02&theatercode=0181&date=20191106'
 
 def job_function():
     html = requests.get(url)
